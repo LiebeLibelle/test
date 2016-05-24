@@ -1,0 +1,11 @@
+.redText {
+	color: #00DEAD;
+	font-size: 40px;
+	/* padding-left:20%;*/
+	background: #FFF;
+}
+.wrapper {
+	margin-right:100px;
+	margin-left:100px;
+	text-align:center;
+}
