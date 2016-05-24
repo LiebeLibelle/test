@@ -97,7 +97,7 @@ function ready() {
 		while (swapCount != 0) {
 			swapCount = 0;
 			arr.forEach(function(item, idx, arr) {
-				if(arr[idx] > arr[idx + 1]) {
+				if(arr[idx] > arr[idx + 1]) { // TODO check index bound
 					var a = arr[idx];
 					arr[idx] = arr[idx + 1];
 					arr[idx + 1] = a;
@@ -127,27 +127,27 @@ function ready() {
 	
 	function selectionSort(arr) {
 		var sortedArr = [];
-		function findMin(item, arr) {
-			var x = false;
-			var i= 0;
-				arr.forEach(function(item, index, arr) {
-					arr[i] > arr[i++];
-					i = i++;
-					return x || arr[i] > arr[i++];
-					});
+		while(arr.lenght != 0) {
+			function findMinIdx(arr) {
+				var minIdx = 0;
+				arr.forEach(function(item, idx, arr) {
+					if(idx != 0) {
+						if(arr[minIdx] > item) {
+							minIdx = idx;
+						}
+					}
+				});
+				return minIdx;
 			}
-		if (x = true) {
-			arr.push(arr[i]);
-			findMin(arr);
-		} else {
-			sortedArr.push(item);
+			findMinIdx(arr);
+			sortedArr.push(arr[minIdx]);
+			arr.splice(minIdx, 1);
+			selectionSort(arr);
 		}
-		return sortedArr;		
 	}
 	
-	
 	console.log("selection sort:", selectionSort(testArr.slice()));
-			
+	
 	
 	/* найти все простые числа до 10000 решетом эратосфена */
 	
