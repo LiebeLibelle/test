@@ -127,7 +127,7 @@ function ready() {
 	
 	function selectionSort(arr) {
 		var sortedArr = [];
-		while(arr.lenght != 0) {
+		while(arr.length > 0) {
 			function findMinIdx(arr) {
 				var minIdx = 0;
 				arr.forEach(function(item, idx, arr) {
@@ -139,16 +139,34 @@ function ready() {
 				});
 				return minIdx;
 			}
-			findMinIdx(arr);
+			var minIdx = findMinIdx(arr);
+			// console.log(minIdx, arr[minIdx]);
 			sortedArr.push(arr[minIdx]);
 			arr.splice(minIdx, 1);
-			selectionSort(arr);
 		}
+		return sortedArr;
 	}
 	
-	console.log("selection sort:", selectionSort(testArr.slice()));
+	var selectionSortArr = selectionSort(testArr.slice());
+	
+	console.log("selection sort:", selectionSortArr);
+	console.log("selection sort result:", jsSortArr.equals(selectionSortArr));
 	
 	
 	/* найти все простые числа до 10000 решетом эратосфена */
+	
+	
+	var someArr = [1, 2, "hi", 14, undefined];
+	var num = [];
+	
+	someArr.forEach(function(item) {
+		if(typeof(item) == "number") {
+			num.push(item);
+		}
+	});
+
+
+	
+	console.log("numbers only:", num); 
 	
 }
