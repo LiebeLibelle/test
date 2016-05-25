@@ -157,16 +157,24 @@ function ready() {
 	
 	
 	var someArr = [1, 2, "hi", 14, undefined];
-	var num = [];
 	
-	someArr.forEach(function(item) {
-		if(typeof(item) == "number") {
-			num.push(item);
-		}
-	});
 
-
+	console.log(
+		"numbers only:", 
+		someArr.filter(
+			function(element){
+				return typeof(element) == "number";
+			}
+		)
+	);
 	
-	console.log("numbers only:", num); 
+	// Выписать подряд все целые числа от двух до n (2, 3, 4, …, n)
+	
+	// переменная p изначально равна двум — первому простому числу.
+	
+	// Повторять шаги, пока возможно:
+		// Зачеркнуть в списке числа от 2p до n считая шагами по p (это будут числа кратные p: 2p, 3p, 4p, …).
+		// Найти первое незачёркнутое число в списке, большее чем p, и присвоить значению переменной p это число.
+		
 	
 }
