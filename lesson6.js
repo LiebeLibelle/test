@@ -28,6 +28,9 @@ Array.prototype.equals = function (array) {
 // Hide method from for-in loops
 Object.defineProperty(Array.prototype, "equals", {enumerable: false});
 
+
+
+
 function ready() {
 	
 	for(var i = 1; i < 4100; i = i * 2) {
@@ -150,31 +153,5 @@ function ready() {
 	var selectionSortArr = selectionSort(testArr.slice());
 	
 	console.log("selection sort:", selectionSortArr);
-	console.log("selection sort result:", jsSortArr.equals(selectionSortArr));
-	
-	
-	/* найти все простые числа до 10000 решетом эратосфена */
-	
-	
-	var someArr = [1, 2, "hi", 14, undefined];
-	
-
-	console.log(
-		"numbers only:", 
-		someArr.filter(
-			function(element){
-				return typeof(element) == "number";
-			}
-		)
-	);
-	
-	// Выписать подряд все целые числа от двух до n (2, 3, 4, …, n)
-	
-	// переменная p изначально равна двум — первому простому числу.
-	
-	// Повторять шаги, пока возможно:
-		// Зачеркнуть в списке числа от 2p до n считая шагами по p (это будут числа кратные p: 2p, 3p, 4p, …).
-		// Найти первое незачёркнутое число в списке, большее чем p, и присвоить значению переменной p это число.
-		
-	
+	console.log("selection sort result:", jsSortArr.equals(selectionSortArr));	
 }
